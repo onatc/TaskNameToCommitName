@@ -12,19 +12,19 @@
 <script>
 	function process(){
 		var a = document.getElementById('str')
-		var res = a.value.replace('Ğ', "G")
-			.replace('Ü', "U")
-			.replace('Ş', "S")
-			.replace('İ', "I")
-			.replace('Ö', "O")
-			.replace('Ç', "C")
-			.replace('ğ', "g")
-			.replace('ü', "u")
-			.replace('ş', "s")
-			.replace('ı', "i")
-			.replace('ö', "o")
-			.replace('ç', "c")
-			.replace(/\s+/g, '-');
+		var res = a.value.replaceAll('Ğ', "G")
+			.replaceAll('Ü', "U")
+			.replaceAll('Ş', "S")
+			.replaceAll('İ', "I")
+			.replaceAll('Ö', "O")
+			.replaceAll('Ç', "C")
+			.replaceAll('ğ', "g")
+			.replaceAll('ü', "u")
+			.replaceAll('ş', "s")
+			.replaceAll('ı', "i")
+			.replaceAll('ö', "o")
+			.replaceAll('ç', "c")
+			.replaceAll(/\s+/g, '-');
 		document.getElementById("result").innerHTML = res
 		document.getElementById('str').value = ""
 	}	
