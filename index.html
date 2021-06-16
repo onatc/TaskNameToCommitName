@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TCR</title>
+</head>
+<body>
+
+<h1>Turkish Character Remover</h1>
+<input type="text" id="str" name="str" value=""><br><br>
+<input type="submit" value="Submit" onclick="return process();">
+<p id="result"></p>
+<script>
+	function process(){
+		var a = document.getElementById('str')
+		var res = a.value.replace('Ğ', "G")
+			.replace('Ü', "U")
+			.replace('Ş', "S")
+			.replace('İ', "I")
+			.replace('Ö', "O")
+			.replace('Ç', "C")
+			.replace('ğ', "g")
+			.replace('ü', "u")
+			.replace('ş', "s")
+			.replace('ı', "i")
+			.replace('ö', "o")
+			.replace('ç', "c")
+			.replace(/\s+/g, '-');
+		document.getElementById("result").innerHTML = res
+		document.getElementById('str').value = ""
+	}	
+</script>
+</body>
+</html>
