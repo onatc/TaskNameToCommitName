@@ -6,9 +6,11 @@
 <body>
 
 <h1>Turkish Character Remover</h1>
-<input type="text" id="str" name="str" value=""><br><br>
-<input type="submit" value="Submit" onclick="return process();">
-<p id="result"></p>
+<input type="text" id="str" name="str" value="" placeholder="Input" style="width:300px;">
+<input type="submit" value="Submit" onclick="return process();"></br></br>
+<input type="text" id="result" style="width:300px;" placeholder="Output" readonly>
+<button onclick="myFunction()" id="copy">Copy text</button>
+<p id="confirm" style="color:MediumSeaGreen;"><p>
 <script>
 	function process(){
 		var a = document.getElementById('str')
@@ -28,9 +30,19 @@
 			.replaceAll('\`', "")
 			.replaceAll('\"', "")
 			.replaceAll(/\s+/g, '-');
-		document.getElementById("result").innerHTML = res
+		document.getElementById("result").value = res
 		document.getElementById('str').value = ""
 	}	
 </script>
+<script>
+function myFunction() {
+  var copyText = document.getElementById("result");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  document.getElementById("confirm").innerHTML = "Copied the text: " + copyText.value
+}
+</script>
+
 </body>
 </html>
