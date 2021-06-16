@@ -24,6 +24,9 @@
 			.replaceAll('ı', "i")
 			.replaceAll('ö', "o")
 			.replaceAll('ç', "c")
+			.replaceAll('\'', "")
+			.replaceAll('\`', "")
+			.replaceAll('\"', "")
 			.replaceAll(/\s+/g, '-');
 		document.getElementById("result").innerHTML = res
 		document.getElementById('str').value = ""
